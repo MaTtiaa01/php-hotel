@@ -40,7 +40,20 @@ $hotels = [
 
 ];
 
-var_dump($_GET['park']);
+$park = $_GET['park'];
+var_dump($park);
+
+// filter form
+$filteredHotels = [];
+
+foreach ($hotels as $el) {
+
+    if ($park == $el['parking']) {
+        array_push($filteredHotels, $el);
+    }
+    var_dump($filteredHotels);
+};
+
 
 ?>
 
@@ -66,9 +79,11 @@ var_dump($_GET['park']);
                 <option value="false">Park not allowed</option>
             </select>
             <button class="ms-2 btn btn-primary" type="submit">Search</button>
+            <button class="ms-2 btn btn-primary" type="reset">Reset</button>
         </form>
 
-        <?php foreach ($hotels as $hotel) : ?>
+        <?php if ($park !== NULL) foreach ($filteredHotels as $hotel) : ?>
+
             <div class="row">
                 <div class="col border">
                     <?= $hotel['name']; ?>
@@ -91,6 +106,7 @@ var_dump($_GET['park']);
                     <?= $hotel['distance_to_center']; ?>
                 </div>
             </div>
+
         <?php endforeach; ?>
 
 
