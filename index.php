@@ -66,7 +66,12 @@ $hotels = [
                     <?= $hotel['description']; ?>
                 </div>
                 <div class="col border">
-                    <?= $hotel['parking']; ?>
+                    <?php if ($hotel['parking']) {
+                        echo "parking allowed";
+                    } else {
+                        echo "parking NOT allowed";
+                    };
+                    ?>
                 </div>
                 <div class="col border">
                     <?= $hotel['vote']; ?>
