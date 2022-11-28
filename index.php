@@ -40,6 +40,8 @@ $hotels = [
 
 ];
 
+var_dump($_GET['park']);
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +58,15 @@ $hotels = [
 <body>
     <div class="container">
         <h1 class="text-center text-uppercase">hotel list</h1>
+
+        <form action="index.php" method="get">
+            <select name="park" id="park">
+                <option value="" disabled="disabled" selected>Select</option>
+                <option value="true">Park allowed</option>
+                <option value="false">Park not allowed</option>
+            </select>
+            <button class="ms-2 btn btn-primary" type="submit">Search</button>
+        </form>
 
         <?php foreach ($hotels as $hotel) : ?>
             <div class="row">
