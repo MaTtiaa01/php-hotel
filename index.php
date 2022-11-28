@@ -55,26 +55,17 @@ $hotels = [
 <body>
     <div class="container">
         <h1>hotel list</h1>
-        <div class="container">
-            <div class="row">
-                <?php foreach ($hotels as $hotel)  ?>
-                <div class="col">
-                    <?php echo $hotel['name'] ?>
-                </div>
-                <div class="col">
-                    <?php echo $hotel['description'] ?>
-                </div>
-                <div class="col">
-                    yes
-                </div>
-                <div class="col">
-                    <?php echo $hotel['vote'] ?>
-                </div>
-                <div class="col">
-                    <?php echo $hotel['distance_to_center'] ?>
-                </div>
-            </div>
-        </div>
+
+
+        <?php foreach ($hotels as $hotel)
+            echo $hotel['name'] . '<br>';
+        echo $hotel['description'] . '<br>';
+        //echo $hotel['parking'] . '<br>';
+        echo $hotel['vote'] . '<br>';
+        echo $hotel['distance_to_center'];
+        ?>
+
+
     </div>
 
 </body>
